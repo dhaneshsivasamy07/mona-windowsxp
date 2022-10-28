@@ -67,6 +67,7 @@ except:
 		sys.exit(1)
 
 import getopt
+import ssl
 
 try:
 	#import debugtypes
@@ -13502,7 +13503,8 @@ def main(args):
 			currentversion,currentrevision = getVersionInfo(inspect.stack()[0][1])
 			u = ""
 			try:
-				u = urllib.urlretrieve(updateurl)
+				ctx = ssl._create_unverified_context()
+				u = urllib.urlretrieve(updateurl, "c:\\logs\\tmp.py", context=ctx)
 				newversion,newrevision = getVersionInfo(u[0])
 				if newversion != "" and newrevision != "":
 					dbg.log("[+] Version compare :")
