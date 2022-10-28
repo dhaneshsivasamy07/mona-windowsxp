@@ -13498,7 +13498,7 @@ def main(args):
 			#url
 			dbg.setStatusBar("Running update process...")
 			dbg.updateLog()
-			updateurl = "https://github.com/corelan/mona/raw/master/mona.py"
+			updateurl = "https://raw.githubusercontent.com/dhaneshsivasamy07/mona-windowsxp/master/mona.py"
 			
 			currentversion,currentrevision = getVersionInfo(inspect.stack()[0][1])
 			u = ""
